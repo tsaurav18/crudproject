@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{%block contents%}
+
+    <h3> <a href="{% url 'newblog'%}" >글쓰기</a></h3>
+<hr>
+  {% for blog in blogs%}
+     <h3> {{blog.title}}</h3>
+  <h3> {{blog.pub_date}}</h3>
+  <h3> {{blog.body}}</h3>
+ <a href="{% url 'update' blog.id%}" >수정</a>
+<a href="{% url 'delete' blog.id%}" >삭제</a>
+
+<hr>
+{%endfor%}
+
+{%endblock%}
+</body>
+</html>
