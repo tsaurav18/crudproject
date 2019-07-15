@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+{%extends 'base.html'%}
+
+
 <body>
 {%block contents%}
+ <div class="container">
+
 
     <h3> <a href="{% url 'newblog'%}" >글쓰기</a></h3>
 <hr>
@@ -13,12 +12,13 @@
      <h3> {{blog.title}}</h3>
   <h3> {{blog.pub_date}}</h3>
   <h3> {{blog.body}}</h3>
- <a href="{% url 'update' blog.id%}" >수정</a>
-<a href="{% url 'delete' blog.id%}" >삭제</a>
+<a href="{% url 'update' blog.id%}"><button type="button" class="btn btn-dark">수정</button></a>
+<a href="{% url 'delete' blog.id%}" ><button type="button" class="btn btn-dark">삭제</button></a>
 
 <hr>
 {%endfor%}
 
 {%endblock%}
+        </div>
 </body>
 </html>

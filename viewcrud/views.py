@@ -21,7 +21,10 @@ def create(request):
             return redirect('home')
     else:
         form = NewBlog()
-        return render(request, 'new.html', {'form':form})
+        return render(request, 'new.html', {'form': form})
+
+def new(request):
+    return render(request, 'new.html')
 
 def update(request,pk):
     blog=get_object_or_404(Blog,pk=pk)
@@ -34,3 +37,4 @@ def delete(request,pk):
     blog = get_object_or_404(Blog, pk=pk)
     blog.delete()
     return redirect('home')
+

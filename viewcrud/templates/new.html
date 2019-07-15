@@ -1,22 +1,17 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="utf-8">
-    <title>싀알류디연습</title>
-</head>
+{% extends 'base.html'%}
+
 <body>
+{% block contents%}
 
     <form method='POST'>
         {% csrf_token %}
         <table>
-            {{form.as_table}}
+            {{form}}
         </table>
         <br>
         <input type="submit" value="제출하기">
     </form>
-
+{% endblock%}
 </body>
-</html>
 
 
->
